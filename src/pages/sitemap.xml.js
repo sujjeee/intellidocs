@@ -5,34 +5,37 @@ function generateSiteMap(allslugs) {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <url>
-       <loc>http://localhost:3000/</loc>
+       <loc>https://intellidocs.vercel.app/</loc>
      </url>
      <url>
-       <loc>http://localhost:3000/blog</loc>
+       <loc>https://intellidocs.vercel.app/rss.xml</loc>
      </url>
      <url>
-       <loc>http://localhost:3000/chatgpt</loc>
+       <loc>https://intellidocs.vercel.app/blog</loc>
      </url>
      <url>
-       <loc>http://localhost:3000/ai-fun</loc>
+       <loc>https://intellidocs.vercel.app/chatgpt</loc>
      </url>
      <url>
-       <loc>http://localhost:3000/about</loc>
+       <loc>https://intellidocs.vercel.app/ai-fun</loc>
      </url>
      <url>
-       <loc>http://localhost:3000/contact</loc>
+       <loc>https://intellidocs.vercel.app/about</loc>
      </url>
      <url>
-     <loc>http://localhost:3000/privacy-policy</loc>
+       <loc>https://intellidocs.vercel.app/contact</loc>
      </url>
      <url>
-       <loc>http://localhost:3000/terms-and-conditions</loc>
+     <loc>https://intellidocs.vercel.app/privacy-policy</loc>
+     </url>
+     <url>
+       <loc>https://intellidocs.vercel.app/terms-and-conditions</loc>
      </url>
      ${allslugs
       .map(({ slug }) => {
         return `
        <url>
-           <loc>${`https://localhost:3000/${slug}`}</loc>
+           <loc>${`https://intellidocs.vercel.app/${slug}`}</loc>
        </url>
      `;
       })

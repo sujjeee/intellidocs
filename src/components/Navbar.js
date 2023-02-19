@@ -70,24 +70,25 @@ const Navbar = () => {
                 initial="closed"
                 animate={isOpen ? "open" : "closed"}
                 className=" sm:hidden absolute w-full top-8 py-4 right-0 left-0 block" >
-                <ul className="flex flex-col py-6 mt-[8px] gap-4 bg-gray-50 font-medium border-y ">
-                    <li className='flex hover:bg-gray-100 justify-between px-4 items-center'>
-                        <a href="#" className="block py-2 text-black rounded  ">Home</a>
+                <div className="flex flex-col py-6 mt-[8px] gap-4 bg-gray-50 font-medium border-y ">
+                    <Link href="/" className='flex hover:bg-gray-100 justify-between px-4 items-center'>
+                        <div className="block py-2 text-black rounded ">Home</div>
                         <RiArrowDropRightLine size={30} />
-                    </li>
-                    <li className='flex hover:bg-gray-100 justify-between px-4 items-center'>
-                        <a href="#" className="block py-2 text-black rounded  ">Blogs</a>
+                    </Link>
+                    <Link href="/blogs" className='flex hover:bg-gray-100 justify-between px-4 items-center'>
+                        <div className="block py-2 text-black rounded ">Blogs</div>
                         <RiArrowDropRightLine size={30} />
-                    </li>
-                    <li className='flex hover:bg-gray-100 justify-between px-4 items-center'>
-                        <a href="#" className="block py-2 text-black rounded  ">ChatGPT</a>
+                    </Link>
+                    <Link href="/chatgpt" className='flex hover:bg-gray-100 justify-between px-4 items-center'>
+                        <div className="block py-2 text-black rounded ">ChatGPT</div>
                         <RiArrowDropRightLine size={30} />
-                    </li>
-                    <li className='flex hover:bg-gray-100 justify-between px-4 items-center'>
-                        <a href="#" className="block py-2 text-black rounded  ">AI Fun</a>
+                    </Link>
+                    <Link href="/ai-fun" className='flex hover:bg-gray-100 justify-between px-4 items-center'>
+                        <div className="block py-2 text-black rounded ">AI Fun</div>
                         <RiArrowDropRightLine size={30} />
-                    </li>
-                </ul>
+                    </Link>
+
+                </div>
             </motion.div>
 
         </nav>

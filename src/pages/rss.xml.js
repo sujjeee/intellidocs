@@ -8,8 +8,8 @@ export async function getServerSideProps({ res }) {
     const allPosts = await getPosts();
     const feed = new RSS({
         title: 'IntelliDocs',
-        description: 'The latest news and insights from my blog',
-        link: 'http://localhost:3000',
+        description: 'Discover the latest AI tools and boost your productivity with our tips and tricks. Explore the power of AI with our documentation.',
+        link: 'https://intellidocs.vercel.app',
         language: 'en-US',
         copyright: '© 2023 IntelliDocs. All rights reserved.'
     })
@@ -18,8 +18,8 @@ export async function getServerSideProps({ res }) {
         feed.item({
             title: post.title,
             description: post.description,
-            url: 'http://localhost:3000',
-            guid: `http://localhost:3000/${post.slug}`,
+            url: 'https://intellidocs.vercel.app',
+            guid: `https://intellidocs.vercel.app/${post.slug}`,
         })
     })
 

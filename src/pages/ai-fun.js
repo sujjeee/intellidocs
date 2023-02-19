@@ -1,4 +1,3 @@
-import BlogCard from '@/components/BlogCard'
 import RelatedCard from '@/components/RelatedCard'
 import { getPosts } from '@/services';
 import Head from 'next/head';
@@ -17,27 +16,28 @@ const aifun = ({ posts }) => {
     return (
         <div>
             <Head>
-                <title>{posts[0].title}</title>
-                {/* <meta name="description" content={posts[0].description} />
-
-                <meta name="twitter:card" content={posts[0].description} />
-                <meta name="twitter:title" content={posts[0].title} />
-                <meta name="twitter:description" content={posts[0].description} />
-                <meta name="twitter:image" content={posts[0].coverImg.url} />
-
-
-                <meta property="og:title" content={posts[0].title} />
-                <meta property="og:description" content={posts[0].description} />
-                <meta property="og:image" content={posts[0].coverImg.url} />
-                <meta property="og:url" content={`http://localhost:3000/${posts[0].slug}`} /> */}
-
-
-                {/* add keyword in cms */}
-
+                <title>Fun with AI Tools - IntelliDocs</title>
+                <meta name="description" content="Explore fun AI tools, learn useful tips and tricks, and discover new ways to use AI technology." />
+                <meta name="keywords" content="AI tools, artificial intelligence, chatbot, GPT, deep learning, machine learning, natural language processing, NLP, neural networks, robotics, virtual assistants, automation, intelligent systems, data analytics, cognitive computing, speech recognition, image recognition, computer vision, predictive analytics, decision support systems, expert systems, knowledge engineering, chatbot development, conversational AI, AI-powered chatbots, chatbot platforms, AI assistants, AI algorithms, AI programming, AI applications, AI technologies, AI solutions. " />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="keywords" content="chatgpt, ai " />
+
+                <meta name="twitter:card" content="Explore fun AI tools, learn useful tips and tricks, and discover new ways to use AI technology." />
+                <meta name="twitter:title" content="Fun with AI Tools - IntelliDocs" />
+                <meta name="twitter:description" content="Explore fun AI tools, learn useful tips and tricks, and discover new ways to use AI technology." />
+                <meta name="twitter:image" content='https://intellidocs.vercel.app/images/ai-fun.png' />
+                <meta name="twitter:url" content='https://intellidocs.vercel.app/ai-fun' />
+
+
+                <meta property="og:title" content="Fun with AI Tools - IntelliDocs" />
+                <meta property="og:description" content="Explore fun AI tools, learn useful tips and tricks, and discover new ways to use AI technology." />
+                <meta property="og:image" content='https://intellidocs.vercel.app/images/ai-fun.png' />
+                <meta property="og:url" content='https://intellidocs.vercel.app/ai-fun' />
+
+                <link rel="canonical" href="https://intellidocs.vercel.app/blogs" key="canonical" />
                 <link rel="icon" href="/favicon.ico" />
-                <link rel="canonical" href="https://example.com/blogs" key="canonical" />
+                <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+                <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+                <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
             </Head>
 
             <div className='max-w-screen-xl mx-auto flex items-center justify-center px-4 py-7 md:py-9'>

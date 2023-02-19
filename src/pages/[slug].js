@@ -1,10 +1,8 @@
-import BlogCard from '@/components/BlogCard'
 import BlogPost from '@/components/BlogPost'
 import PopularPosts from '@/components/PopularPosts'
 import RelatedCard from '@/components/RelatedCard'
 import { getPostDetail, getPosts } from '@/services'
 import Head from 'next/head'
-import Image from 'next/image'
 import React from 'react'
 
 export async function getStaticProps({ params }) {
@@ -31,53 +29,60 @@ export async function getStaticPaths() {
 
 const slug = ({ posts }) => {
     // const blog = posts.map((post) => { return post })
+    console.log("first", posts)
     // console.log('blog data', posts.map((post) => { return post.relatedPosts.flatMap((post) => post) }))
-    // function blogJsonLd() {
-    //     return {
-    //         __html: `{
-    //             "@context": "https://schema.org",
-    //             "@type": "BlogPosting",
-    //             "headline": ${posts[0].title},
-    //             "image": {
-    //                 "@type": "ImageObject",
-    //                 "url": ${posts[0].coverImg.url},
-    //                 "width": 1200,
-    //                 "height": 630
-    //             },
-    //             "publisher": {
-    //                 "@type": "Organization",
-    //                 "name": "IntelliDocs",
-    //                 "url": "https://dataliberate.com",
-    //                 "logo": {
-    //                     "@type": "ImageObject",
-    //                     "url": "https://www.myblog.com/logo.png",
-    //                     "width": "1200",
-    //                     "height": "630"
-    //                 }
-    //             },
-    //             "url": ${`http://localhost:3000/${posts[0].slug}`},
-    //             "description": ${posts[0].description},
-    //             "datePublished": "2023-02-10T09:00:00Z",
-    //             "dateModified": "2023-02-10T12:00:00Z",
-    //             "author": {
-    //                 "@type": "Person",
-    //                 "name": "Author Name",
-    //                 "url": "https://benborgers.com"
-    //             },
-    //             "mainEntityOfPage": {
-    //                 "@type": "WebPage",
-    //                 "@id": "https://www.intellidocs.vercel.app"
-    //             },
-    //             "keywords": [
-    //                 "chatGPT",
-    //                 "Ai tools",
-    //                 "Future of ai"
-    //             ],
-    //         }`,
-    //     };
-    // }
+    function blogJsonLd() {
+        return {
+            __html: `{
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "headline": ${posts[0].title},
+                "image": {
+                    "@type": "ImageObject",
+                    "url": ${posts[0].coverImg.url},
+                    "width": 600,
+                    "height": 300
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "IntelliDocs",
+                    "url": "https://intellidocs.vercel.app/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://intellidocs.vercel.app/logo.png",
+                        "width": "250",
+                        "height": "250"
+                    }
+                },
+                "url": ${`https://intellidocs.vercel.app/${posts[0].slug}`},
+                "description": ${posts[0].description},
+                "datePublished": ${posts[0].createdAt},
+                "dateModified": ${posts[0].updatedAt},
+                "author": {
+                    "@type": "Person",
+                    "name": "IntelliDocs",
+                    "url": "https://intellidocs.vercel.app/"
+                },
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://www.intellidocs.vercel.app/blogs"
+                },
+                "keywords": [
+                    "chatGPT",
+                    "Ai tools",
+                    "Future of ai",
+                    "AI tools",
+                    "artificial intelligence",
+                    "chatbot",
+                    "GPT",
+                    "deep learning", 
+                    "AI technologies",
+                    " AI solutions". 
+                ],
+            }`,
+        };
+    }
     return (
-
         <>
             <Head>
                 <title>{posts[0].title}</title>
@@ -87,26 +92,30 @@ const slug = ({ posts }) => {
                 <meta name="twitter:title" content={posts[0].title} />
                 <meta name="twitter:description" content={posts[0].description} />
                 <meta name="twitter:image" content={posts[0].coverImg.url} />
+                <meta name="twitter:url" content={`https://intellidocs.vercel.app/${posts[0].slug}`} />
 
 
                 <meta property="og:title" content={posts[0].title} />
                 <meta property="og:description" content={posts[0].description} />
                 <meta property="og:image" content={posts[0].coverImg.url} />
-                <meta property="og:url" content={`http://localhost:3000/${posts[0].slug}`} />
-
-
-                {/* add keyword in cms */}
+                <meta property="og:url" content={`https://intellidocs.vercel.app/${posts[0].slug}`} />
 
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="keywords" content="chatgpt, ai " />
+                <meta name="keywords" content="AI tools, artificial intelligence, chatbot, GPT, deep learning, machine learning, natural language processing, NLP, neural networks, robotics, virtual assistants, automation, intelligent systems, data analytics, cognitive computing, speech recognition, image recognition, computer vision, predictive analytics, decision support systems, expert systems, knowledge engineering, chatbot development, conversational AI, AI-powered chatbots, chatbot platforms, AI assistants, AI algorithms, AI programming, AI applications, AI technologies, AI solutions. " />
+
                 <link rel="icon" href="/favicon.ico" />
-                <link rel="canonical" href="https://example.com/blogs" key="canonical" />
-                {/* <script
+                <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+                <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+                <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+                <link rel="canonical" href="https://intellidocs.vercel.app/blogs" key="canonical" />
+                <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={blogJsonLd()}
                     key="blog-jsonld"
-                /> */}
+                />
             </Head>
+
             <style global jsx>{`
                 body {
                 background-color: #f7f7f7;

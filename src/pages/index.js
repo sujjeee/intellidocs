@@ -16,50 +16,56 @@ export async function getStaticProps() {
 
 export default function Home({ posts }) {
   // console.log('all is here', posts)
-  // function homeJsonLd() {
-  //   return {
-  //     __html: `{
-  //       "@context": "https://schema.org",
-  //       "@type": "WebSite",
-  //       "name": "My Blog",
-  //       "url": "https://www.myblog.com/",
-  //       "description": "A blog about various topics.",
-  //       "publisher": {
-  //         "@type": "Organization",
-  //         "name": "My Blog",
-  //         "logo": {
-  //           "@type": "ImageObject",
-  //           "url": "https://www.myblog.com/logo.png"
-  //         }
-  //       }
-  //     }`,
-  //   };
-  // }
+  function homeJsonLd() {
+    return {
+      __html: `{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "IntelliDocs",
+        "url": "https://intellidocs.vercel.app/",
+        "description": "Discover the latest AI tools and boost your productivity with our tips and tricks. Explore the power of AI with our documentation.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "IntelliDocs",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://intellidocs.vercel.app/logo.png"
+          }
+        }
+      }`,
+    };
+  }
   return (
     <>
       <Head>
-        <title>IntelliDocs</title>
+        <title>IntelliDocs - Documenting the Power of AI</title>
         <meta name="description" content="Discover the latest AI tools and boost your productivity with our tips and tricks. Explore the power of AI with our documentation." />
         <meta name="keywords" content="AI tools, artificial intelligence, chatbot, GPT, deep learning, machine learning, natural language processing, NLP, neural networks, robotics, virtual assistants, automation, intelligent systems, data analytics, cognitive computing, speech recognition, image recognition, computer vision, predictive analytics, decision support systems, expert systems, knowledge engineering, chatbot development, conversational AI, AI-powered chatbots, chatbot platforms, AI assistants, AI algorithms, AI programming, AI applications, AI technologies, AI solutions. " />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <meta name="twitter:card" content="Discover the latest AI tools and boost your productivity with our tips and tricks. Explore the power of AI with our documentation." />
-        <meta name="twitter:title" content="IntelliDocs" />
+        <meta name="twitter:title" content="IntelliDocs - Documenting the Power of AI" />
         <meta name="twitter:description" content="Discover the latest AI tools and boost your productivity with our tips and tricks. Explore the power of AI with our documentation." />
-        {/* <meta name="twitter:image" content={posts[0].coverImg.url} /> */}
+        <meta name="twitter:image" content='https://intellidocs.vercel.app/images/intellidocs.png' />
+        <meta name="twitter:url" content='https://intellidocs.vercel.app/' />
 
-
-        <meta property="og:title" content="IntelliDocs" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="IntelliDocs - Documenting the Power of AI" />
         <meta property="og:description" content="Discover the latest AI tools and boost your productivity with our tips and tricks. Explore the power of AI with our documentation." />
-        {/* <meta property="og:image" content={posts[0].coverImg.url} /> */}
-        <meta property="og:url" content={`http://localhost:3000/`} />
-        <link rel="canonical" href="https://example.com/blogs" key="canonical" />
+        <meta property="og:image" content='https://intellidocs.vercel.app/images/intellidocs.png' />
+        <meta property="og:url" content='https://intellidocs.vercel.app/' />
+
+        <link rel="canonical" href="https://intellidocs.vercel.app/blogs" key="canonical" />
         <link rel="icon" href="/favicon.ico" />
-        {/* <script
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={homeJsonLd()}
           key="home-jsonld"
-        /> */}
+        />
       </Head>
 
       <main>
