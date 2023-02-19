@@ -1,0 +1,11 @@
+sitemap: https://localhost:3000/sitemap.xml
+sitemap: https://localhost:3000/rss.xml
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Block all crawlers 
+User-agent: *
+Disallow: /api/
+Disallow: /404.js
