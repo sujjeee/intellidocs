@@ -1,5 +1,6 @@
 import { db } from '@/firebase';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
+import Head from 'next/head';
 import React, { useState } from 'react'
 
 const contact = () => {
