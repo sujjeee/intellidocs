@@ -6,16 +6,16 @@ const PopularPosts = ({ posts }) => {
     return (
         <div>
             <Link href={`/${encodeURIComponent(posts.slug)}`}>
-                <div className="flex py-2">
+                <div className="flex py-2 px-4 lg:px-6 hover:bg-gray-50">
                     <Image
-                        className="w-20 max-h-14 rounded"
+                        className="w-20 max-h-14 rounded hover:opacity-90"
                         src={posts.coverImg.url}
                         height={200}
                         width={500}
                         loading="lazy"
                         alt={posts.title} />
                     <div className="pl-4">
-                        <h3 className="text-base font-medium">{posts.title}</h3>
+                        <h3 className="text-base font-medium hover:text-blue-800">{posts.title}</h3>
                     </div>
                 </div>
             </Link>

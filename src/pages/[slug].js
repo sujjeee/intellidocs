@@ -149,7 +149,7 @@ const slug = ({ posts }) => {
                         <div className='border-b px-4 lg:px-6 py-3 mb-2.5'>
                             <h3 className='text-lg font-bold tracking-wide'>Popular stories</h3>
                         </div>
-                        <div className='px-4 lg:px-6 justify-between'>
+                        <div className=' justify-between'>
                             {posts.flatMap((post) => post.popularPosts.map((popularPost, key) => (
                                 <div key={key}>
                                     <PopularPosts posts={popularPost} />
