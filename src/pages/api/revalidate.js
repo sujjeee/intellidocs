@@ -10,9 +10,9 @@ export default async function handler(req, res) {
         await res.revalidate('/blogs')
         await res.revalidate('/chatgpt')
         await res.revalidate('/ai-fun')
-        await res.revalidate(`/${req.body.data.slug}`)
+        await res.revalidate(`/${body.data.slug}`)
 
-        return res.json({ revalidated: true })
+        return res.json({ revalidated: true, slug: body.data.slug })
 
     } catch (error) {
         return res.status(500).send({

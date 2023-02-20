@@ -19,6 +19,11 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
     const allPosts = await getPosts();
     // console.log('aall slugs', allPosts)
+    if (!allPosts) {
+        return {
+            notFound: true,
+        };
+    }
     return {
         paths: allPosts.map(({ slug }) => ({
             params: { slug },
@@ -82,6 +87,7 @@ const slug = ({ posts }) => {
             }`,
         };
     }
+
     return (
         <>
             <Head>
