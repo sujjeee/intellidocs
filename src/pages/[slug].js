@@ -4,6 +4,7 @@ import RelatedCard from '@/components/RelatedCard'
 import { getPostDetail, getPosts } from '@/services'
 import Head from 'next/head'
 import React from 'react'
+import NotFound from './404'
 
 export async function getStaticProps({ params }) {
     const slugQuery = params.slug
@@ -28,11 +29,15 @@ export async function getStaticPaths() {
         paths: allPosts.map(({ slug }) => ({
             params: { slug },
         })),
-        fallback: false,
+        fallback: "blocking",
     };
 }
 
 const slug = ({ posts }) => {
+    console.log('pages info', posts)
+    if (!posts || !posts.length) {
+        return <NotFound />;
+    }
     // const blog = posts.map((post) => { return post })
     console.log("first", posts)
     // console.log('blog data', posts.map((post) => { return post.relatedPosts.flatMap((post) => post) }))
