@@ -1,6 +1,7 @@
 import { db } from '@/firebase';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import Head from 'next/head';
+import Link from 'next/link';
 import React, { useState } from 'react'
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -16,8 +17,9 @@ const contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setVerified(false)
         const { fullname, email, message } = userDetails
-        console.log('youre ', fullname, email, message)
+        // console.log('youre ', fullname, email, message)
         const res = await addDoc(collection(db, 'emails'), {
             name: fullname,
             email: email,
@@ -33,7 +35,7 @@ const contact = () => {
     }
 
     function onCaptcha(value) {
-        console.log("Captcha value:", value);
+        // console.log("Captcha value:", value);
         setVerified(true)
     }
     return (
@@ -144,12 +146,11 @@ const contact = () => {
                         <h2 class="mt-6 text-base font-medium text-gray-700">
                             We Will Get In Touch With You Shortly.
                         </h2>
-                        <div
-                            class="mt-8 w-full rounded-md shadow-sm  bg-indigo-600 hover:bg-indigo-700  py-4 text-sm font-bold text-white"
-                            href=""
-                        >
-                            Okay
-                        </div>
+                        <Link href="/">
+                            <div class="mt-8 w-full rounded-md shadow-sm  bg-indigo-600 hover:bg-indigo-700  py-4 text-sm font-bold text-white">
+                                Okay
+                            </div>
+                        </Link>
                     </div>
                 </section>}
 
