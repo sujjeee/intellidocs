@@ -7,6 +7,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 const contact = () => {
 
     const [verified, setVerified] = useState(false)
+    const [showmodal, setShowmodal] = useState(false)
     const [userDetails, setUserDetails] = useState({ fullname: "", email: "", message: "" })
 
     const onChange = (e) => {
@@ -24,9 +25,10 @@ const contact = () => {
             timestamp: serverTimestamp()
         });
         if (res) {
+            setShowmodal(true)
             e.target.reset();
             setUserDetails({ fullname: "", email: "", message: "" })
-            window.location.reload();
+            // window.location.reload();
         }
     }
 
@@ -52,8 +54,8 @@ const contact = () => {
                 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
                 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
             </Head>
-            <div className="bg-white pt-12 pb-16 px-4 overflow-hidden sm:px-6 lg:px-8 ">
-                <div className="relative max-w-xl mx-auto">
+            <div className="bg-white pt-12 pb-16 px-4 overflow-hidden sm:px-6 lg:px-8 relative">
+                {!showmodal && <div className="relative max-w-xl mx-auto">
                     <div className="text-center">
                         <h2 className="text-3xl font-bold  text-gray-900 sm:text-4xl">Contact us</h2>
                         <p className="mt-4 text-base md:text-lg leading-6 text-gray-500">
@@ -132,7 +134,26 @@ const contact = () => {
                             </div>
                         </form>
                     </div>
-                </div>
+                </div>}
+
+                {showmodal && <section class="rounded-xl shadow-xl md:max-w-lg mx-auto">
+                    <div class="p-8 text-center sm:p-12">
+                        <p class="text-2xl font-bold uppercase  text-black">
+                            Thanks For Contacting Us!
+                        </p>
+                        <h2 class="mt-6 text-base font-medium text-gray-700">
+                            We Will Get In Touch With You Shortly.
+                        </h2>
+                        <div
+                            class="mt-8 w-full rounded-md shadow-sm  bg-indigo-600 hover:bg-indigo-700  py-4 text-sm font-bold text-white"
+                            href=""
+                        >
+                            Okay
+                        </div>
+                    </div>
+                </section>}
+
+
             </div>
         </>
     )

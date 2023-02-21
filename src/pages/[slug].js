@@ -34,7 +34,7 @@ export async function getStaticPaths() {
 }
 
 const slug = ({ posts }) => {
-    // console.log('pages info', posts)
+
     if (!posts || !posts.length) {
         return <NotFound />;
     }
@@ -105,7 +105,7 @@ const slug = ({ posts }) => {
                 <meta name="twitter:image" content={posts[0].coverImg.url} />
                 <meta name="twitter:url" content={`https://intellidocs.vercel.app/${posts[0].slug}`} />
 
-
+                <meta property="og:type" content="blog" />
                 <meta property="og:title" content={posts[0].title} />
                 <meta property="og:description" content={posts[0].description} />
                 <meta property="og:image" content={posts[0].coverImg.url} />
