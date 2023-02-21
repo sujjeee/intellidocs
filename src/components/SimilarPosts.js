@@ -2,11 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
-const RelatedCard = ({ posts }) => {
+const SimilarPosts = ({ posts }) => {
     // console.log('my posts', posts)
     return (
         <div >
-            <Link href={`/${encodeURIComponent(posts.slug)}`} legacyBehavior>
+            <Link href={`/${encodeURIComponent(posts.slug)}`} >
                 <div
                     className="mx-auto w-full  bg-white border border-gray-200 rounded-md cursor-pointer">
                     <div>
@@ -16,7 +16,7 @@ const RelatedCard = ({ posts }) => {
                             alt={posts.title}
                             height={300}
                             width={600}
-                            priority
+                        // priority
                         />
                     </div>
                     <div className="p-4 ">
@@ -30,4 +30,4 @@ const RelatedCard = ({ posts }) => {
     )
 }
 
-export default RelatedCard
+export default SimilarPosts

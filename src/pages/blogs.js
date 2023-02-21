@@ -32,8 +32,6 @@ const blogs = ({ posts }) => {
                 <meta property="og:description" content="Discover the latest AI tools and boost your productivity with our tips and tricks and many more things to fun with AI." />
                 <meta property="og:image" content='https://intellidocs.vercel.app/images/intellidocs.png' />
                 <meta property="og:url" content='https://intellidocs.vercel.app/blogs' />
-
-                <link rel="canonical" href="https://intellidocs.vercel.app/blogs" key="canonical" />
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
                 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

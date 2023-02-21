@@ -13,7 +13,7 @@ const terms = () => {
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Term and Conditions - IntelliDocs" />
                 {/* <meta property="og:description" content="we share amazing information and tools related to Artificial Intelligence (AI)." /> */}
-                <meta property="og:url" content='https://intellidocs.vercel.app/term-and-conditions' />
+                <meta property="og:url" content='https://intellidocs.vercel.app/info/term-and-conditions' />
                 {/* <meta property="og:image" content='https://intellidocs.vercel.app/term-and-conditions' /> */}
 
                 <link rel="icon" href="/favicon.ico" />

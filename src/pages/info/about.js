@@ -15,7 +15,7 @@ const about = () => {
                 <meta property="og:title" content="About us - IntelliDocs" />
                 <meta property="og:description" content="we share amazing information and tools related to Artificial Intelligence (AI)." />
                 {/* <meta property="og:url" content="URL of your about page" /> */}
-                <meta property="og:url" content='https://intellidocs.vercel.app/about' />
+                <meta property="og:url" content='https://intellidocs.vercel.app/info/about' />
 
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

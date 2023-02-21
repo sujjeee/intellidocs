@@ -13,7 +13,7 @@ const privacy = () => {
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content=">Privacy Policy - IntelliDocs" />
                 {/* <meta property="og:description" content="we share amazing information and tools related to Artificial Intelligence (AI)." /> */}
-                <meta property="og:url" content='https://intellidocs.vercel.app/privacy-policy' />
+                <meta property="og:url" content='https://intellidocs.vercel.app/info/privacy-policy' />
 
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

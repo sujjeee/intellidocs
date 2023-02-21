@@ -1,7 +1,7 @@
 import { GraphQLClient, gql } from 'graphql-request';
 
 const hygraph = new GraphQLClient(
-  process.env.GRAHPQL_ENDPOINT
+  process.env.NEXT_PUBLIC_GRAHPQL_ENDPOINT
 );
 
 export const getPostDetail = async (slugQuery) => {
@@ -66,6 +66,19 @@ export const getPosts = async () => {
             category {
               name
             }
+          }
+        }
+    `
+  );
+
+  return allPosts
+};
+export const getPostsSlug = async () => {
+  const { allPosts } = await hygraph.request(gql`
+        {
+          allPosts:posts {
+            slug
+            title
           }
         }
     `

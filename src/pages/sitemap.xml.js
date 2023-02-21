@@ -1,4 +1,4 @@
-import { getPosts } from "@/services";
+import { getPostsSlug } from "@/services";
 
 function generateSiteMap(allslugs) {
   console.log('getting slugs', allslugs)
@@ -6,9 +6,6 @@ function generateSiteMap(allslugs) {
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <url>
        <loc>https://intellidocs.vercel.app/</loc>
-     </url>
-     <url>
-       <loc>https://intellidocs.vercel.app/rss.xml</loc>
      </url>
      <url>
        <loc>https://intellidocs.vercel.app/blog</loc>
@@ -20,16 +17,16 @@ function generateSiteMap(allslugs) {
        <loc>https://intellidocs.vercel.app/ai-fun</loc>
      </url>
      <url>
-       <loc>https://intellidocs.vercel.app/about</loc>
+       <loc>https://intellidocs.vercel.app/info/about</loc>
      </url>
      <url>
-       <loc>https://intellidocs.vercel.app/contact</loc>
+       <loc>https://intellidocs.vercel.app/info/contact</loc>
      </url>
      <url>
-     <loc>https://intellidocs.vercel.app/privacy-policy</loc>
+     <loc>https://intellidocs.vercel.app/info/privacy-policy</loc>
      </url>
      <url>
-       <loc>https://intellidocs.vercel.app/terms-and-conditions</loc>
+       <loc>https://intellidocs.vercel.app/info/terms-and-conditions</loc>
      </url>
      ${allslugs
       .map(({ slug }) => {
@@ -50,7 +47,7 @@ function SiteMap() {
 
 
 export async function getServerSideProps({ res }) {
-  const allPosts = await getPosts();
+  const allPosts = await getPostsSlug();
   // console.log('all sitemap', allPosts)
 
   const allslugs = allPosts.map((post) => ({ slug: post.slug }));

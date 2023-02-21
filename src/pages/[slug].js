@@ -1,7 +1,7 @@
 import BlogPost from '@/components/BlogPost'
 import PopularPosts from '@/components/PopularPosts'
-import RelatedCard from '@/components/RelatedCard'
-import { getPostDetail, getPosts } from '@/services'
+import SimilarPosts from '@/components/SimilarPosts'
+import { getPostDetail, getPostsSlug } from '@/services'
 import Head from 'next/head'
 import React from 'react'
 import NotFound from './404'
@@ -18,7 +18,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const allPosts = await getPosts();
+    const allPosts = await getPostsSlug();
     // console.log('aall slugs', allPosts)
     if (!allPosts) {
         return {
@@ -34,12 +34,12 @@ export async function getStaticPaths() {
 }
 
 const slug = ({ posts }) => {
-    console.log('pages info', posts)
+    // console.log('pages info', posts)
     if (!posts || !posts.length) {
         return <NotFound />;
     }
     // const blog = posts.map((post) => { return post })
-    console.log("first", posts)
+    // console.log("first", posts)
     // console.log('blog data', posts.map((post) => { return post.relatedPosts.flatMap((post) => post) }))
     function blogJsonLd() {
         return {
@@ -119,7 +119,6 @@ const slug = ({ posts }) => {
                 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
                 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
-                <link rel="canonical" href="https://intellidocs.vercel.app/blogs" key="canonical" />
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={blogJsonLd()}
@@ -132,6 +131,7 @@ const slug = ({ posts }) => {
                 background-color: #f7f7f7;
                 }
             `}</style>
+
             <div className='max-w-screen-xl mx-auto lg:py-4 lg:px-4 lg:flex justify-between gap-5'>
                 <div className='lg:max-w-[820px] border lg:px-20 bg-white '>
                     <div>
@@ -149,7 +149,7 @@ const slug = ({ posts }) => {
                         <div className='pb-8 grid sm:grid-cols-2 gap-3' >
                             {posts.flatMap((post) => post.relatedPosts.map((relatedPost, key) => (
                                 <div key={key}>
-                                    <RelatedCard posts={relatedPost} />
+                                    <SimilarPosts posts={relatedPost} />
                                 </div>
                             )))}
                         </div>
