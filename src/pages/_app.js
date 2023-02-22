@@ -1,4 +1,4 @@
-// import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from '@vercel/analytics/react';
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import '@/styles/globals.css'
@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }) {
           <Footer />
         </footer>
       </div>
-      {/* <Analytics /> */}
+      <Analytics />
     </>
   )
 }
