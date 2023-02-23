@@ -16,24 +16,20 @@ export async function getStaticProps() {
 
 export default function Home({ posts }) {
   // console.log('all is here', posts)
-  function homeJsonLd() {
-    return {
-      __html: `{
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "IntelliDocs",
-        "url": "https://intellidocs.vercel.app/",
-        "description": "Discover the latest AI tools and boost your productivity with our tips and tricks. Explore the power of AI with our documentation.",
-        "publisher": {
-          "@type": "Organization",
-          "name": "IntelliDocs",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://intellidocs.vercel.app/logo.png"
-          }
-        }
-      }`,
-    };
+  const homeJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "IntelliDocs",
+    "url": "https://intellidocs.vercel.app/",
+    "description": "Discover the latest AI tools and boost your productivity with our tips and tricks. Explore the power of AI with our documentation.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "IntelliDocs",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://intellidocs.vercel.app/logo.png"
+      }
+    }
   }
   return (
     <>
@@ -63,8 +59,7 @@ export default function Home({ posts }) {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={homeJsonLd()}
-          key="home-jsonld"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
         />
       </Head>
 

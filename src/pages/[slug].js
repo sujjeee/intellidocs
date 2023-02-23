@@ -41,56 +41,40 @@ const slug = ({ posts }) => {
     // const blog = posts.map((post) => { return post })
     // console.log("first", posts)
     // console.log('blog data', posts.map((post) => { return post.relatedPosts.flatMap((post) => post) }))
-    function blogJsonLd() {
-        return {
-            __html: `{
-                "@context": "https://schema.org",
-                "@type": "BlogPosting",
-                "headline": ${posts[0].title},
-                "image": {
-                    "@type": "ImageObject",
-                    "url": ${posts[0].coverImg.url},
-                    "width": 600,
-                    "height": 300
-                },
-                "publisher": {
-                    "@type": "Organization",
-                    "name": "IntelliDocs",
-                    "url": "https://intellidocs.vercel.app/",
-                    "logo": {
-                        "@type": "ImageObject",
-                        "url": "https://intellidocs.vercel.app/logo.png",
-                        "width": "250",
-                        "height": "250"
-                    }
-                },
-                "url": ${`https://intellidocs.vercel.app/${posts[0].slug}`},
-                "description": ${posts[0].description},
-                "datePublished": ${posts[0].createdAt},
-                "dateModified": ${posts[0].updatedAt},
-                "author": {
-                    "@type": "Person",
-                    "name": "IntelliDocs",
-                    "url": "https://intellidocs.vercel.app/"
-                },
-                "mainEntityOfPage": {
-                    "@type": "WebPage",
-                    "@id": "https://www.intellidocs.vercel.app/blogs"
-                },
-                "keywords": [
-                    "chatGPT",
-                    "Ai tools",
-                    "Future of ai",
-                    "AI tools",
-                    "artificial intelligence",
-                    "chatbot",
-                    "GPT",
-                    "deep learning", 
-                    "AI technologies",
-                    " AI solutions". 
-                ],
-            }`,
-        };
+    const blogJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": posts[0].title,
+        "image": {
+            "@type": "ImageObject",
+            "url": posts[0].coverImg.url,
+            "width": 600,
+            "height": 300
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "IntelliDocs",
+            "url": "https://intellidocs.vercel.app/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://intellidocs.vercel.app/logo.png",
+                "width": "250",
+                "height": "250"
+            }
+        },
+        "url": `https://intellidocs.vercel.app/${posts[0].slug}`,
+        "description": posts[0].description,
+        "datePublished": posts[0].createdAt,
+        "dateModified": posts[0].updatedAt,
+        "author": {
+            "@type": "Person",
+            "name": "IntelliDocs",
+            "url": "https://intellidocs.vercel.app/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.intellidocs.vercel.app/blogs"
+        }
     }
 
     return (
@@ -121,8 +105,7 @@ const slug = ({ posts }) => {
 
                 <script
                     type="application/ld+json"
-                    dangerouslySetInnerHTML={blogJsonLd()}
-                    key="blog-jsonld"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
                 />
             </Head>
 
