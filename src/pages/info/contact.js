@@ -119,7 +119,7 @@ const contact = () => {
                                     />
                                 </div>
                             </div>
-                            <div className='sm:col-span-2 flex items-center justify-center'>
+                            <div className='sm:col-span-2 flex items-center justify-center h-20'>
                                 <ReCAPTCHA
                                     sitekey={process.env.NEXT_PUBLIC_RECAPTCHA}
                                     onChange={onCaptcha}

@@ -39,6 +39,7 @@ export default function Home({ posts }) {
     <>
       <Head>
         <title>IntelliDocs - Documenting the Power of AI</title>
+        <meta name="google-site-verification" content="5z2lDnQ6mdG9S2qZm74DNfOk3xdwLR-orzDHc5XiJxs" />
         <meta name="description" content="Discover the latest AI tools and boost your productivity with our tips and tricks. Explore the power of AI with our documentation." />
         <meta name="keywords" content="AI tools, artificial intelligence, chatbot, GPT, deep learning, machine learning, natural language processing, NLP, neural networks, robotics, virtual assistants, automation, intelligent systems, data analytics, cognitive computing, speech recognition, image recognition, computer vision, predictive analytics, decision support systems, expert systems, knowledge engineering, chatbot development, conversational AI, AI-powered chatbots, chatbot platforms, AI assistants, AI algorithms, AI programming, AI applications, AI technologies, AI solutions. " />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
