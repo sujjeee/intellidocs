@@ -64,8 +64,6 @@ const slug = ({ posts }) => {
         },
         "url": `https://intellidocs.vercel.app/${posts[0].slug}`,
         "description": posts[0].description,
-        "datePublished": posts[0].createdAt,
-        "dateModified": posts[0].updatedAt,
         "author": {
             "@type": "Person",
             "name": "IntelliDocs",
@@ -74,7 +72,15 @@ const slug = ({ posts }) => {
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://www.intellidocs.vercel.app/blogs"
-        }
+        },
+        "keywords": [
+            "chatGPT",
+            "Free Ai tools",
+            "Best AI tools",
+            "Earn money with AI",
+            "Artificial Intelligence",
+            "Free AI Websites"
+        ]
     }
 
     return (
