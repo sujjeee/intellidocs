@@ -1,12 +1,12 @@
 import Hero from '@/components/Hero'
 import RelatedCard from '@/components/RelatedCard';
-import { getPosts } from '@/services';
+import { getHomePosts } from '@/services';
 import Head from 'next/head'
 import Link from 'next/link';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 
 export async function getStaticProps() {
-  const posts = await getPosts();
+  const posts = await getHomePosts();
 
   return {
     props: { posts }

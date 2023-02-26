@@ -14,7 +14,7 @@ export default async function handler(req, res) {
         await res.revalidate('/')
         await res.revalidate('/blogs')
         await res.revalidate('/chatgpt')
-        await res.revalidate('/ai-fun')
+        await res.revalidate('/ai-tools')
         await res.revalidate(path.join("/", req.body.data.slug));
         return res.status(200).json({ revalidated: true });
     } catch (err) {

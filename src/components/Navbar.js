@@ -56,8 +56,8 @@ const Navbar = () => {
                 <Link href="/chatgpt" className="flex items-center hover:bg-gray-100 py-2 px-3.5 rounded-lg">
                     <span>ChatGPT</span>
                 </Link>
-                <Link href="/ai-fun" className="flex items-center hover:bg-gray-100 py-2 px-3.5 rounded-lg">
-                    <span>AI Fun</span>
+                <Link href="/ai-tools" className="flex items-center hover:bg-gray-100 py-2 px-3.5 rounded-lg">
+                    <span>AI Tools</span>
                 </Link>
             </div>
             <div className='flex sm:hidden items-center'  >
@@ -83,8 +83,8 @@ const Navbar = () => {
                         <div className="block py-2 text-black rounded ">ChatGPT</div>
                         <RiArrowDropRightLine size={30} />
                     </Link>
-                    <Link href="/ai-fun" className='flex hover:bg-gray-100 justify-between px-4 items-center' onClick={() => setIsOpen(false)}>
-                        <div className="block py-2 text-black rounded ">AI Fun</div>
+                    <Link href="/ai-tools" className='flex hover:bg-gray-100 justify-between px-4 items-center' onClick={() => setIsOpen(false)}>
+                        <div className="block py-2 text-black rounded ">AI Tools</div>
                         <RiArrowDropRightLine size={30} />
                     </Link>
 

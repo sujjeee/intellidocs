@@ -160,6 +160,7 @@ const slug = ({ posts }) => {
             <Head>
                 <title>{posts[0].title}</title>
                 <meta name="description" content={posts[0].description} />
+                <meta name="keywords" content={posts[0].keywords} />
 
                 <meta name="twitter:card" content={posts[0].description} />
                 <meta name="twitter:title" content={posts[0].title} />
@@ -172,12 +173,14 @@ const slug = ({ posts }) => {
                 <meta property="og:description" content={posts[0].description} />
                 <meta property="og:image" content={posts[0].coverImg.url} />
                 <meta property="og:url" content={`https://intellidocs.vercel.app/${posts[0].slug}`} />
+                <meta property="og:site_name" content="Intellidocs" />
+                <meta property="og:image:alt" content={posts[0].title} />
 
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="keywords" content={posts[0].keywords} />
 
                 <link rel="icon" href="/favicon.ico" />
+                <link rel="canonical" href={`https://intellidocs.vercel.app/${posts[0].slug}`} />
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
                 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
                 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

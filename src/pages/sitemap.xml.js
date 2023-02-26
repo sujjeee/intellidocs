@@ -14,7 +14,7 @@ function generateSiteMap(allslugs) {
        <loc>https://intellidocs.vercel.app/chatgpt</loc>
      </url>
      <url>
-       <loc>https://intellidocs.vercel.app/ai-fun</loc>
+       <loc>https://intellidocs.vercel.app/ai-tools</loc>
      </url>
      <url>
        <loc>https://intellidocs.vercel.app/info/about</loc>

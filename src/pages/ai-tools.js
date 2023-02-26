@@ -11,7 +11,7 @@ export async function getStaticProps() {
     };
 
 }
-const aifun = ({ posts }) => {
+const aitools = ({ posts }) => {
     const aiPosts = posts.filter(post => post.category.some(cate => cate.name === "ai"));
     return (
         <div>
@@ -24,14 +24,14 @@ const aifun = ({ posts }) => {
                 <meta name="twitter:card" content="Explore fun AI tools, learn useful tips and tricks, and discover new ways to use AI technology." />
                 <meta name="twitter:title" content="Fun with AI Tools - IntelliDocs" />
                 <meta name="twitter:description" content="Explore fun AI tools, learn useful tips and tricks, and discover new ways to use AI technology." />
-                <meta name="twitter:image" content='https://intellidocs.vercel.app/images/ai-fun.png' />
-                <meta name="twitter:url" content='https://intellidocs.vercel.app/ai-fun' />
+                <meta name="twitter:image" content='https://intellidocs.vercel.app/images/ai-tools.png' />
+                <meta name="twitter:url" content='https://intellidocs.vercel.app/ai-tools' />
 
 
                 <meta property="og:title" content="Fun with AI Tools - IntelliDocs" />
                 <meta property="og:description" content="Explore fun AI tools, learn useful tips and tricks, and discover new ways to use AI technology." />
-                <meta property="og:image" content='https://intellidocs.vercel.app/images/ai-fun.png' />
-                <meta property="og:url" content='https://intellidocs.vercel.app/ai-fun' />
+                <meta property="og:image" content='https://intellidocs.vercel.app/images/ai-tools.png' />
+                <meta property="og:url" content='https://intellidocs.vercel.app/ai-tools' />
 
                 <link rel="canonical" href="https://intellidocs.vercel.app/blogs" key="canonical" />
                 <link rel="icon" href="/favicon.ico" />
@@ -58,4 +58,4 @@ const aifun = ({ posts }) => {
     )
 }
 
-export default aifun
+export default aitools
