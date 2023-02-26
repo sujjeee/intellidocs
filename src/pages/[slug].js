@@ -42,40 +42,118 @@ const slug = ({ posts }) => {
     // const blog = posts.map((post) => { return post })
     // console.log("first", posts)
     // console.log('blog data', posts.map((post) => { return post.relatedPosts.flatMap((post) => post) }))
+
+
     const blogJsonLd = {
         "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": posts[0].title,
-        "image": {
-            "@type": "ImageObject",
-            "url": posts[0].coverImg.url,
-            "width": 600,
-            "height": 300
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "IntelliDocs",
-            "url": "https://intellidocs.vercel.app/",
-            "logo": {
+        "@graph": [
+            {
+                "@type": [
+                    "Person",
+                    "Organization"
+                ],
+                "@id": "https://intellidocs.vercel.app/#organization",
+                "name": "IntelliDocs",
+                "logo": {
+                    "@type": "ImageObject",
+                    "@id": "https://intellidocs.vercel.app/#logo",
+                    "url": "https://intellidocs.vercel.app/logo.png",
+                    "contentUrl": "https://intellidocs.vercel.app/logo.png",
+                    "caption": "IntelliDocs",
+                    "inLanguage": "en-US"
+                },
+                "image": {
+                    "@type": "ImageObject",
+                    "@id": "https://intellidocs.vercel.app/#logo",
+                    "url": "https://intellidocs.vercel.app/logo.png",
+                    "contentUrl": "https://intellidocs.vercel.app/logo.png",
+                    "caption": "IntelliDocs",
+                    "inLanguage": "en-US"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://intellidocs.vercel.app/#website",
+                "url": "https://intellidocs.vercel.app/",
+                "name": "IntelliDocs",
+                "publisher": {
+                    "@id": "https://intellidocs.vercel.app/#organization"
+                },
+                "inLanguage": "en-US"
+            },
+            {
                 "@type": "ImageObject",
-                "url": "https://intellidocs.vercel.app/logo.png",
-                "width": "250",
-                "height": "250"
+                "@id": posts[0].coverImg.url,
+                "url": posts[0].coverImg.url,
+                "width": "620",
+                "height": "340",
+                "caption": posts[0].title,
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "WebPage",
+                "@id": `https://intellidocs.vercel.app/${posts[0].slug}/#webpage`,
+                "url": `https://intellidocs.vercel.app/${posts[0].slug}`,
+                "name": posts[0].title,
+                "datePublished": posts[0].createdAt,
+                "dateModified": posts[0].updatedAt,
+                "isPartOf": {
+                    "@id": "https://intellidocs.vercel.app/#website"
+                },
+                "primaryImageOfPage": {
+                    "@id": posts[0].coverImg.url
+                },
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "Person",
+                "@id": "https://intellidocs.vercel.app/info/about",
+                "name": "IntelliDocs Team",
+                "url": "https://intellidocs.vercel.app/info/about",
+                "image": {
+                    "@type": "ImageObject",
+                    "@id": "https://intellidocs.vercel.app/logo.png",
+                    "url": "https://intellidocs.vercel.app/logo.png",
+                    "caption": "IntelliDocs Team",
+                    "inLanguage": "en-US"
+                },
+                "sameAs": [
+                    "https://intellidocs.vercel.app"
+                ]
+            },
+            {
+                "@type": "BlogPosting",
+                "headline": posts[0].title,
+                "keywords": keywords_list,
+                "datePublished": posts[0].createdAt,
+                "dateModified": posts[0].updatedAt,
+                "articleSection": "TECHNOLOGY",
+                "author": {
+                    "@id": "https://intellidocs.vercel.app/info/about",
+                    "name": "IntelliDocs Team"
+                },
+                "publisher": {
+                    "@id": "https://intellidocs.vercel.app/#organization",
+                },
+                "description": posts[0].description,
+                "url": `https: //intellidocs.vercel.app/${posts[0].slug}`,
+                "name": posts[0].title,
+                "@id": `https://intellidocs.vercel.app/${posts[0].slug}/#richSnippet`,
+                "isPartOf": {
+                    "@id": `https://intellidocs.vercel.app/${posts[0].slug}/#webpage`
+                },
+                "image": {
+                    "@id": posts[0].coverImg.url,
+                },
+                "inLanguage": "en-US",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": `https://intellidocs.vercel.app/${posts[0].slug}/#webpage`
+                }
             }
-        },
-        "url": `https://intellidocs.vercel.app/${posts[0].slug}`,
-        "description": posts[0].description,
-        "author": {
-            "@type": "Person",
-            "name": "IntelliDocs",
-            "url": "https://intellidocs.vercel.app/"
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.intellidocs.vercel.app/blogs"
-        },
-        "keywords": keywords_list
+        ]
     }
+
 
     return (
         <>
