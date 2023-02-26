@@ -11,6 +11,7 @@ const about = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="author" content="Intellidocs" />
 
+                <meta charset="UTF-8" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="About us - IntelliDocs" />
                 <meta property="og:description" content="we share amazing information and tools related to Artificial Intelligence (AI)." />

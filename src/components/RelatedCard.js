@@ -6,7 +6,7 @@ const RelatedCard = ({ posts }) => {
     // console.log('my posts', posts)
     return (
         <div >
-            <Link href={`/${encodeURIComponent(posts.slug)}`} legacyBehavior>
+            <Link href={`/${encodeURIComponent(posts.slug)}`}>
                 <div
                     className="mx-auto w-full  bg-white border border-gray-200 rounded-md cursor-pointer">
                     <div>

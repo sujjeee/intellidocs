@@ -51,6 +51,7 @@ const contact = () => {
                 <meta property="og:description" content="Get in touch with us! Fill out the contact form and we'll be in touch shortly. We look forward to hearing from you." />
                 <meta property="og:url" content='https://intellidocs.vercel.app/info/contact' />
 
+                <meta charset="UTF-8" />
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
                 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

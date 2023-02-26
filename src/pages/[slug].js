@@ -38,6 +38,7 @@ const slug = ({ posts }) => {
     if (!posts || !posts.length) {
         return <NotFound />;
     }
+    const keywords_list = posts[0].keywords.split(",")
     // const blog = posts.map((post) => { return post })
     // console.log("first", posts)
     // console.log('blog data', posts.map((post) => { return post.relatedPosts.flatMap((post) => post) }))
@@ -73,14 +74,7 @@ const slug = ({ posts }) => {
             "@type": "WebPage",
             "@id": "https://www.intellidocs.vercel.app/blogs"
         },
-        "keywords": [
-            "chatGPT",
-            "Free Ai tools",
-            "Best AI tools",
-            "Earn money with AI",
-            "Artificial Intelligence",
-            "Free AI Websites"
-        ]
+        "keywords": keywords_list
     }
 
     return (
@@ -101,8 +95,9 @@ const slug = ({ posts }) => {
                 <meta property="og:image" content={posts[0].coverImg.url} />
                 <meta property="og:url" content={`https://intellidocs.vercel.app/${posts[0].slug}`} />
 
+                <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="keywords" content="AI tools, artificial intelligence, chatbot, GPT, deep learning, machine learning, natural language processing, NLP, neural networks, robotics, virtual assistants, automation, intelligent systems, data analytics, cognitive computing, speech recognition, image recognition, computer vision, predictive analytics, decision support systems, expert systems, knowledge engineering, chatbot development, conversational AI, AI-powered chatbots, chatbot platforms, AI assistants, AI algorithms, AI programming, AI applications, AI technologies, AI solutions. " />
+                <meta name="keywords" content={posts[0].keywords} />
 
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
