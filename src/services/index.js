@@ -101,9 +101,9 @@ export const getHomePosts = async () => {
 export const getPostsSlug = async () => {
   const { allPosts } = await hygraph.request(gql`
         {
-          allPosts:posts {
+          allPosts:posts(orderBy: createdAt_DESC) {
             slug
-            title
+            updatedAt
           }
         }
     `
