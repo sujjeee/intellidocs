@@ -159,8 +159,10 @@ const slug = ({ posts }) => {
         <>
             <Head>
                 <title>{posts[0].title}</title>
+                <meta name="google-site-verification" content="5z2lDnQ6mdG9S2qZm74DNfOk3xdwLR-orzDHc5XiJxs" />
                 <meta name="description" content={posts[0].description} />
                 <meta name="keywords" content={posts[0].keywords} />
+                <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
                 <meta name="twitter:card" content={posts[0].description} />
                 <meta name="twitter:title" content={posts[0].title} />

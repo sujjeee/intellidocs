@@ -53,7 +53,7 @@ export const getPostDetail = async (slugQuery) => {
 export const getPosts = async () => {
   const { allPosts } = await hygraph.request(gql`
         {
-          allPosts:posts(orderBy: createdAt_DESC) {
+          allPosts:posts(last: 100, orderBy: createdAt_DESC) {
             slug
             title
             description
@@ -65,6 +65,25 @@ export const getPosts = async () => {
             }
             category {
               name
+            }
+          }
+        }
+    `
+  );
+
+  return allPosts
+};
+
+export const getFeedPosts = async () => {
+  const { allPosts } = await hygraph.request(gql`
+        {
+          allPosts:posts(last: 100, orderBy: createdAt_DESC) {
+            slug
+            title
+            description
+            updatedAt
+            content{
+              html
             }
           }
         }
@@ -101,7 +120,7 @@ export const getHomePosts = async () => {
 export const getPostsSlug = async () => {
   const { allPosts } = await hygraph.request(gql`
         {
-          allPosts:posts(orderBy: createdAt_DESC) {
+          allPosts:posts(last: 100, orderBy: createdAt_DESC) {
             slug
             updatedAt
           }

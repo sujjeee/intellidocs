@@ -41,7 +41,7 @@ function generateSiteMap(allslugs) {
       .map(({ slug, date }) => {
         return `
        <url>
-           <loc>${`https://intellidocs.vercel.app/${slug}`}</loc>
+           <loc>${`https://intellidocs.vercel.app/${encodeURI(slug)}`}</loc>
            <lastmod>${moment(date).format("YYYY-MM-DD")}</lastmod>
            <changefreq>daily</changefreq>
            <priority>1.0</priority>

@@ -39,6 +39,7 @@ export default function Home({ posts }) {
         <meta name="description" content="Discover the latest AI tools and boost your productivity with our tips and tricks. Explore the power of AI with our documentation." />
         <meta name="keywords" content="AI tools, artificial intelligence, chatbot, GPT, deep learning, machine learning, natural language processing, NLP, neural networks, robotics, virtual assistants, automation, intelligent systems, data analytics, cognitive computing, speech recognition, image recognition, computer vision, predictive analytics, decision support systems, expert systems, knowledge engineering, chatbot development, conversational AI, AI-powered chatbots, chatbot platforms, AI assistants, AI algorithms, AI programming, AI applications, AI technologies, AI solutions. " />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
         <meta name="twitter:card" content="Discover the latest AI tools and boost your productivity with our tips and tricks. Explore the power of AI with our documentation." />
         <meta name="twitter:title" content="IntelliDocs - Documenting the Power of AI" />
