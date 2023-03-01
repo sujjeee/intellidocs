@@ -13,7 +13,6 @@ export async function getStaticProps() {
 }
 const chatgpt = ({ posts }) => {
     const ChatGPTPosts = posts.filter(post => post.category.some(cate => cate.name === "chatgpt"));
-    // console.log("first", aiPosts)
     return (
         <>
             <Head>
