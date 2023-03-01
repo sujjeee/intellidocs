@@ -19,7 +19,6 @@ const contact = () => {
         e.preventDefault()
         setVerified(false)
         const { fullname, email, message } = userDetails
-        // console.log('youre ', fullname, email, message)
         const res = await addDoc(collection(db, 'emails'), {
             name: fullname,
             email: email,
@@ -30,12 +29,10 @@ const contact = () => {
             setShowmodal(true)
             e.target.reset();
             setUserDetails({ fullname: "", email: "", message: "" })
-            // window.location.reload();
         }
     }
 
     function onCaptcha(value) {
-        // console.log("Captcha value:", value);
         setVerified(true)
     }
     return (

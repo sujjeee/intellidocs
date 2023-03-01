@@ -16,7 +16,6 @@ export async function getServerSideProps({ res }) {
     })
 
     allPosts.map((post) => {
-        // console.log("all dates", post)
         feed.item({
             title: post.title,
             date: moment(post.updatedAt).format("MMMM DD, YYYY HH:mm:ss [GMT]"),

@@ -2,7 +2,6 @@ import { getPostsSlug } from "@/services";
 import moment from "moment";
 
 function generateSiteMap(allslugs) {
-  // console.log('getting slugs', allslugs)
   return `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
@@ -53,17 +52,13 @@ function generateSiteMap(allslugs) {
  `;
 }
 
-function SiteMap() {
-  // getServerSideProps will do the heavy lifting
-}
+function SiteMap() { }
 
 
 export async function getServerSideProps({ res }) {
-  const allPosts = await getPostsSlug();
-  // console.log('all sitemap', allPosts)
 
+  const allPosts = await getPostsSlug();
   const allslugs = allPosts.map((post) => ({ slug: post.slug, date: post.updatedAt }));
-  // console.log('all slugs of sitemap', allslugs)
   const sitemap = generateSiteMap(allslugs);
 
   res.setHeader('Content-Type', 'text/xml');

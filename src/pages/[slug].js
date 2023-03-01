@@ -9,7 +9,6 @@ import NotFound from './404'
 export async function getStaticProps({ params }) {
     const slugQuery = params.slug
     const posts = await getPostDetail(slugQuery);
-    // console.log('all details', posts)
 
     return {
         props: { posts },
@@ -19,7 +18,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
     const allPosts = await getPostsSlug();
-    // console.log('aall slugs', allPosts)
+
     if (!allPosts) {
         return {
             notFound: true,
@@ -39,10 +38,6 @@ const slug = ({ posts }) => {
         return <NotFound />;
     }
     const keywords_list = posts[0].keywords.split(",")
-    // const blog = posts.map((post) => { return post })
-    // console.log("first", posts)
-    // console.log('blog data', posts.map((post) => { return post.relatedPosts.flatMap((post) => post) }))
-
 
     const blogJsonLd = {
         "@context": "https://schema.org",
@@ -181,6 +176,7 @@ const slug = ({ posts }) => {
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+                <link rel="alternate" type="application/rss+xml" href="https://intellidocs.vercel.app/rss.xml" />
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="canonical" href={`https://intellidocs.vercel.app/${posts[0].slug}`} />
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

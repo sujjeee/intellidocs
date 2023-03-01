@@ -15,7 +15,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
-  // console.log('all is here', posts)
   const homeJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -55,6 +54,7 @@ export default function Home({ posts }) {
 
         <meta charset="UTF-8" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="alternate" type="application/rss+xml" href="https://intellidocs.vercel.app/rss.xml" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

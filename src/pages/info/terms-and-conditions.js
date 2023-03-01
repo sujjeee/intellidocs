@@ -6,6 +6,7 @@ const terms = () => {
         <>
             <Head>
                 <title>Term and Conditions - IntelliDocs</title>
+                <meta name="description" content="Terms and Conditions of Intellidocs" />
 
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="author" content="Intellidocs" />

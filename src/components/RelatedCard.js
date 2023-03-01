@@ -3,7 +3,6 @@ import Link from 'next/link';
 import React from 'react'
 
 const RelatedCard = ({ posts }) => {
-    // console.log('my posts', posts)
     return (
         <div >
             <Link href={`/${encodeURIComponent(posts.slug)}`}>
