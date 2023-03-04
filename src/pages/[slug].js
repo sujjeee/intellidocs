@@ -175,6 +175,7 @@ const slug = ({ posts }) => {
 
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta property="fb:app_id" content="932876774381228" />
 
                 <link rel="alternate" type="application/rss+xml" href="https://intellidocs.vercel.app/rss.xml" />
                 <link rel="icon" href="/favicon.ico" />
