@@ -17,7 +17,7 @@ const BlogPost = ({ posts }) => {
                             </time>
                         </div>
                     </header>
-                    <div className="mb-3 text-base text-gray-700 w-full sm:text-lg prose max-w-none prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-img:rounded-md prose-img:max-h-[400px] prose-img:shadow-md prose-img:m-0 prose-h3:text-lg prose-h2:text-xl prose-h2:text-black prose-h3:text-black prose-h3:font-medium prose-h2:font-semibold prose-a:no-underline">
+                    <div className="mb-3 text-base text-gray-700 w-full sm:text-lg prose max-w-none prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-img:rounded-md prose-img:max-h-[400px] prose-img:shadow-md prose-img:m-0 prose-h3:text-lg prose-h2:text-xl prose-h2:text-black prose-h3:text-black prose-h3:font-medium prose-h2:font-semibold prose-a:no-underline prose-pre:w-[92vw] lg:prose-pre:w-auto">
                         {parse(posts.content?.html, {
                             replace: (domNode) => {
                                 if (domNode instanceof Element && domNode.name === "img") {
@@ -36,7 +36,7 @@ const BlogPost = ({ posts }) => {
                     </div>
                 </div>
             </div>
-        </article>
+        </article >
 
     )
 }
