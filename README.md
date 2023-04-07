@@ -1,4 +1,17 @@
 ## IntelliDocs
 
-Welcome to our website, your source for the latest news, tips, and tricks related to Artificial Intelligence and the latest tools available to make your life easier. Here, you can find the latest developments in AI, the newest tools and techniques to help you get the most out of your AI projects, and helpful advice on how best to use AI in your everyday life. Whether you’re a beginner or an expert, there’s something here for everyone. So join us and stay up-to-date with the latest in AI.
+Intellidocs is a blogging website made up of the latest tech stack like React, Next.js, and Firebase for storing contact information. For blogs, it uses headless CMS Hygraph which is fast and free for developers.
+
+
+<kbd>
+<a href="https://intellidocs.vercel.app/">
+  <img src="https://intellidocs.vercel.app/images/web-page.png" />
+</a>
+</kbd>
+
+<kbd>
+<a href="https://intellidocs.vercel.app/">
+  <img src="https://intellidocs.vercel.app/images/blog-page.png" />
+</a>
+</kbd>
 
